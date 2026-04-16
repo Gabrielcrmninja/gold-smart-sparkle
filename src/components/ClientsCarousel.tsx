@@ -1,6 +1,6 @@
 import Autoplay from "embla-carousel-autoplay";
-import ClassNames from "embla-carousel-class-names";
 import useEmblaCarousel from "embla-carousel-react";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 import { useCallback, useEffect, useRef, useState } from "react";
 import c1 from "@/assets/cliente-1.png";
 import c2 from "@/assets/cliente-2.png";
@@ -10,56 +10,41 @@ import c5 from "@/assets/cliente-5.png";
 import c6 from "@/assets/cliente-6.png";
 
 const images = [c1, c2, c3, c4, c5, c6];
-const TWEEN_FACTOR = 1.2;
 
 export const ClientsCarousel = () => {
   const autoplay = useRef(
-    Autoplay({ delay: 2800, stopOnInteraction: false, stopOnMouseEnter: true })
+    Autoplay({ delay: 3500, stopOnInteraction: false, stopOnMouseEnter: true })
   );
   const [emblaRef, emblaApi] = useEmblaCarousel(
     {
       loop: true,
-      align: "center",
-      dragFree: false,
-      containScroll: false,
+      align: "start",
+      slidesToScroll: 1,
     },
-    [autoplay.current, ClassNames({ snapped: "is-snapped" })]
+    [autoplay.current]
   );
-  const [tweenValues, setTweenValues] = useState<number[]>([]);
+  const [selectedIndex, setSelectedIndex] = useState(0);
+  const [scrollSnaps, setScrollSnaps] = useState<number[]>([]);
 
-  const onScroll = useCallback(() => {
+  const scrollPrev = useCallback(() => emblaApi?.scrollPrev(), [emblaApi]);
+  const scrollNext = useCallback(() => emblaApi?.scrollNext(), [emblaApi]);
+  const scrollTo = useCallback(
+    (index: number) => emblaApi?.scrollTo(index),
+    [emblaApi]
+  );
+
+  const onSelect = useCallback(() => {
     if (!emblaApi) return;
-    const engine = emblaApi.internalEngine();
-    const scrollProgress = emblaApi.scrollProgress();
-    const slidesInView = emblaApi.slidesInView();
-    const isScrollEvent = engine.scrollBody.direction() !== 0;
-
-    const styles = emblaApi.scrollSnapList().map((scrollSnap, index) => {
-      let diffToTarget = scrollSnap - scrollProgress;
-      if (engine.options.loop) {
-        engine.slideLooper.loopPoints.forEach((loopItem) => {
-          const target = loopItem.target();
-          if (index === loopItem.index && target !== 0) {
-            const sign = Math.sign(target);
-            if (sign === -1) diffToTarget = scrollSnap - (1 + scrollProgress);
-            if (sign === 1) diffToTarget = scrollSnap + (1 - scrollProgress);
-          }
-        });
-      }
-      const tweenValue = 1 - Math.abs(diffToTarget * TWEEN_FACTOR);
-      return Math.max(0.55, Math.min(1, tweenValue));
-    });
-    setTweenValues(styles);
-    void slidesInView;
-    void isScrollEvent;
+    setSelectedIndex(emblaApi.selectedScrollSnap());
   }, [emblaApi]);
 
   useEffect(() => {
     if (!emblaApi) return;
-    onScroll();
-    emblaApi.on("scroll", onScroll);
-    emblaApi.on("reInit", onScroll);
-  }, [emblaApi, onScroll]);
+    setScrollSnaps(emblaApi.scrollSnapList());
+    onSelect();
+    emblaApi.on("select", onSelect);
+    emblaApi.on("reInit", onSelect);
+  }, [emblaApi, onSelect]);
 
   return (
     <section id="clientes" className="py-20 sm:py-28 relative overflow-hidden">
@@ -75,38 +60,58 @@ export const ClientsCarousel = () => {
             Centenas de clientes satisfeitos saindo da loja com o seu novo iPhone.
           </p>
         </div>
-      </div>
 
-      <div className="overflow-hidden cursor-grab active:cursor-grabbing" ref={emblaRef}>
-        <div className="flex gap-4 sm:gap-6 px-4 py-8" style={{ perspective: "1200px" }}>
-          {[...images, ...images].map((src, i) => {
-            const scale = tweenValues[i % images.length] ?? 0.7;
-            const rotate = (1 - scale) * 35;
-            const opacity = 0.4 + scale * 0.6;
-            return (
-              <div
-                key={i}
-                className="flex-[0_0_70%] sm:flex-[0_0_42%] md:flex-[0_0_32%] lg:flex-[0_0_24%] relative"
-                style={{
-                  transform: `scale(${scale}) rotateY(${rotate}deg)`,
-                  opacity,
-                  transition: "transform 0.4s ease, opacity 0.4s ease",
-                  transformStyle: "preserve-3d",
-                }}
-              >
-                <div className="relative overflow-hidden rounded-2xl gold-border shadow-elegant aspect-[3/4]">
-                  <img
-                    src={src}
-                    alt={`Cliente Gold SmartPhones ${(i % images.length) + 1}`}
-                    loading="lazy"
-                    className="w-full h-full object-cover pointer-events-none"
-                    draggable={false}
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-transparent" />
+        <div className="relative max-w-6xl mx-auto">
+          <div className="overflow-hidden" ref={emblaRef}>
+            <div className="flex">
+              {images.map((src, i) => (
+                <div
+                  key={i}
+                  className="flex-[0_0_100%] sm:flex-[0_0_50%] lg:flex-[0_0_33.3333%] min-w-0 px-3"
+                >
+                  <div className="relative overflow-hidden rounded-2xl gold-border shadow-elegant aspect-[3/4]">
+                    <img
+                      src={src}
+                      alt={`Cliente Gold SmartPhones ${i + 1}`}
+                      loading="lazy"
+                      className="w-full h-full object-cover"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-transparent" />
+                  </div>
                 </div>
-              </div>
-            );
-          })}
+              ))}
+            </div>
+          </div>
+
+          <button
+            onClick={scrollPrev}
+            aria-label="Cliente anterior"
+            className="absolute left-2 sm:-left-4 top-1/2 -translate-y-1/2 z-10 h-12 w-12 rounded-full bg-background/80 backdrop-blur-sm border border-primary/40 text-primary hover:bg-primary hover:text-primary-foreground transition-all shadow-elegant flex items-center justify-center"
+          >
+            <ChevronLeft className="h-6 w-6" />
+          </button>
+          <button
+            onClick={scrollNext}
+            aria-label="Próximo cliente"
+            className="absolute right-2 sm:-right-4 top-1/2 -translate-y-1/2 z-10 h-12 w-12 rounded-full bg-background/80 backdrop-blur-sm border border-primary/40 text-primary hover:bg-primary hover:text-primary-foreground transition-all shadow-elegant flex items-center justify-center"
+          >
+            <ChevronRight className="h-6 w-6" />
+          </button>
+
+          <div className="flex justify-center gap-2 mt-8">
+            {scrollSnaps.map((_, index) => (
+              <button
+                key={index}
+                onClick={() => scrollTo(index)}
+                aria-label={`Ir para slide ${index + 1}`}
+                className={`h-2 rounded-full transition-all ${
+                  index === selectedIndex
+                    ? "w-8 bg-primary"
+                    : "w-2 bg-primary/30 hover:bg-primary/50"
+                }`}
+              />
+            ))}
+          </div>
         </div>
       </div>
     </section>
