@@ -8,8 +8,16 @@ import c3 from "@/assets/cliente-3.png";
 import c4 from "@/assets/cliente-4.png";
 import c5 from "@/assets/cliente-5.png";
 import c6 from "@/assets/cliente-6.png";
+import f1 from "@/assets/feedback-1.jpg";
+import f2 from "@/assets/feedback-2.jpg";
+import f3 from "@/assets/feedback-3.jpg";
+import f4 from "@/assets/feedback-4.jpg";
+import f5 from "@/assets/feedback-5.jpg";
+import f6 from "@/assets/feedback-6.jpg";
+import f7 from "@/assets/feedback-7.jpg";
 
-const images = [c1, c2, c3, c4, c5, c6];
+// Embaralhado: clientes + feedbacks intercalados
+const images = [c1, f1, c2, f2, c3, f3, c4, f4, c5, f5, c6, f6, f7];
 
 export const ClientsCarousel = () => {
   const autoplay = useRef(
