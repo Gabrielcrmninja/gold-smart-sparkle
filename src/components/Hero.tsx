@@ -36,7 +36,7 @@ export const Hero = () => {
 
           <div className="flex flex-wrap items-center gap-4 mb-12">
             <a
-              href="https://wa.me/5500000000000"
+              href="https://wa.me/5533984185744"
               target="_blank"
               rel="noopener noreferrer"
               className="group inline-flex items-center gap-3 px-7 py-4 rounded-full bg-gradient-gold text-primary-foreground font-semibold shadow-gold hover:shadow-glow transition-all duration-500 hover:-translate-y-1"
@@ -77,23 +77,11 @@ export const Hero = () => {
           <img
             src={iphone}
             alt="iPhone 17 Pro Max laranja"
-            width={1024}
-            height={1024}
+            loading="eager"
+            decoding="async"
             className="relative z-10 w-full h-full object-contain animate-float drop-shadow-[0_40px_60px_hsl(43_74%_52%/0.35)]"
+            style={{ imageRendering: "auto" }}
           />
-
-          {/* Floating badges */}
-          <div className="absolute top-8 right-2 sm:right-8 glass-card rounded-2xl px-4 py-3 animate-float-slow shadow-elegant">
-            <div className="text-[10px] tracking-widest text-muted-foreground uppercase">Lançamento</div>
-            <div className="font-display text-lg text-gradient-gold">17 Pro Max</div>
-          </div>
-          <div
-            className="absolute bottom-12 left-2 sm:left-4 glass-card rounded-2xl px-4 py-3 animate-float-slow shadow-elegant"
-            style={{ animationDelay: "1s" }}
-          >
-            <div className="text-[10px] tracking-widest text-muted-foreground uppercase">Em até</div>
-            <div className="font-display text-lg text-gradient-gold">12x sem juros</div>
-          </div>
         </div>
       </div>
     </section>

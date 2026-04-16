@@ -32,11 +32,11 @@ export const Footer = () => {
             <div className="text-xs tracking-[0.3em] uppercase text-primary mb-4">Empresa</div>
             <ul className="space-y-2 text-sm text-muted-foreground">
               <li>
-                <strong className="text-foreground font-medium">Gold SmartPhones</strong>
+                <strong className="text-foreground font-medium">H. Oliveira Alves</strong>
               </li>
-              <li>CNPJ: 00.000.000/0001-00</li>
-              <li>Rua Exemplo, 123 — Centro</li>
-              <li>contato@goldsmartphones.com</li>
+              <li>CNPJ: 43.083.804/0001-04</li>
+              <li>Rua Arthur Bernardes, 146 — Ipanema/MG</li>
+              <li>WhatsApp: (33) 98418-5744</li>
             </ul>
           </div>
 
@@ -44,7 +44,7 @@ export const Footer = () => {
             <div className="text-xs tracking-[0.3em] uppercase text-primary mb-4">Conecte-se</div>
             <div className="flex gap-3 mb-6">
               <a
-                href="https://wa.me/5500000000000"
+                href="https://wa.me/5533984185744"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="WhatsApp"
