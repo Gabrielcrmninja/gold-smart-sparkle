@@ -25,9 +25,9 @@ export const Address = () => {
               <div>
                 <div className="text-xs tracking-widest uppercase text-primary mb-1">Endereço</div>
                 <p className="text-foreground leading-relaxed">
-                  Rua Exemplo, 123 — Centro
+                  Rua Arthur Bernardes, 146
                   <br />
-                  Cidade — Estado, 00000-000
+                  Ipanema — MG
                 </p>
               </div>
             </div>
@@ -39,12 +39,12 @@ export const Address = () => {
               <div>
                 <div className="text-xs tracking-widest uppercase text-primary mb-1">Contato</div>
                 <a
-                  href="https://wa.me/5500000000000"
+                  href="https://wa.me/5533984185744"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-foreground hover:text-primary transition-colors block"
                 >
-                  WhatsApp: (00) 00000-0000
+                  WhatsApp: (33) 98418-5744
                 </a>
               </div>
             </div>
@@ -64,7 +64,7 @@ export const Address = () => {
             </div>
 
             <a
-              href="https://wa.me/5500000000000"
+              href="https://wa.me/5533984185744"
               target="_blank"
               rel="noopener noreferrer"
               className="block text-center w-full px-6 py-4 rounded-full bg-gradient-gold text-primary-foreground font-semibold shadow-gold-sm hover:shadow-gold transition-all hover:-translate-y-0.5"
@@ -76,7 +76,7 @@ export const Address = () => {
           <div className="lg:col-span-3 rounded-3xl overflow-hidden gold-border shadow-elegant aspect-square lg:aspect-auto min-h-[400px]">
             <iframe
               title="Localização Gold SmartPhones"
-              src="https://www.google.com/maps?q=Avenida+Paulista,+1000,+S%C3%A3o+Paulo&output=embed"
+              src="https://www.google.com/maps?q=Rua+Arthur+Bernardes,+146,+Ipanema,+MG&output=embed"
               className="w-full h-full grayscale contrast-125"
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
