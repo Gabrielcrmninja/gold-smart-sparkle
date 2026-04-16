@@ -47,7 +47,7 @@ export const ClientsCarousel = () => {
   }, [emblaApi, onSelect]);
 
   return (
-    <section id="clientes" className="py-20 sm:py-28 relative overflow-hidden">
+    <section id="clientes" className="py-14 sm:py-20 relative overflow-hidden">
       <div className="container">
         <div className="text-center mb-14 max-w-2xl mx-auto">
           <div className="inline-block text-xs tracking-[0.3em] uppercase text-primary mb-4">

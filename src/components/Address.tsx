@@ -2,7 +2,7 @@ import { Clock, MapPin, Phone } from "lucide-react";
 
 export const Address = () => {
   return (
-    <section id="contato" className="py-20 sm:py-32 relative">
+    <section id="contato" className="py-14 sm:py-20 relative">
       <div className="container">
         <div className="text-center mb-14 max-w-2xl mx-auto">
           <div className="inline-block text-xs tracking-[0.3em] uppercase text-primary mb-4">
