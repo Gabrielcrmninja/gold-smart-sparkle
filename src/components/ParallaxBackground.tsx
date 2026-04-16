@@ -1,12 +1,17 @@
 import { useEffect, useState } from "react";
 import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
 import { useIsMobile } from "@/hooks/use-mobile";
-import macbook from "@/assets/parallax-macbook.png";
 import airpods from "@/assets/parallax-airpods.png";
 import watch from "@/assets/parallax-watch.png";
 import ipad from "@/assets/parallax-ipad.png";
 import iphoneBlack from "@/assets/parallax-iphone-black.png";
 import homepod from "@/assets/parallax-homepod.png";
+import visionpro from "@/assets/parallax-visionpro.png";
+import airpodsmax from "@/assets/parallax-airpodsmax.png";
+import airpodscase from "@/assets/parallax-airpodscase.png";
+import watchBlack from "@/assets/parallax-watch-black.png";
+import magsafe from "@/assets/parallax-magsafe.png";
+import pencil from "@/assets/parallax-pencil.png";
 
 type Item = {
   src: string;
@@ -28,29 +33,29 @@ type Item = {
 
 const items: Item[] = [
   // Hero area (0–100vh)
-  { src: macbook, alt: "", top: 12, left: 78, size: 280, depth: 0.9, rotate: -8, delay: 0, opacity: 0.18 },
-  { src: airpods, alt: "", top: 70, left: 8, size: 140, depth: 0.6, rotate: 12, delay: 0.5, opacity: 0.22 },
-  { src: watch, alt: "", top: 35, left: 3, size: 120, depth: 0.4, rotate: -15, delay: 1, opacity: 0.18 },
+  { src: visionpro, alt: "", top: 14, left: 78, size: 170, depth: 0.9, rotate: -8, delay: 0, opacity: 0.2 },
+  { src: airpods, alt: "", top: 70, left: 8, size: 90, depth: 0.6, rotate: 12, delay: 0.5, opacity: 0.22 },
+  { src: watch, alt: "", top: 35, left: 4, size: 80, depth: 0.4, rotate: -15, delay: 1, opacity: 0.18 },
 
   // Clients / Benefits (100–220vh)
-  { src: ipad, alt: "", top: 130, left: 70, size: 320, depth: 0.85, rotate: 14, delay: 0.2, opacity: 0.16 },
-  { src: iphoneBlack, alt: "", top: 175, left: 12, size: 200, depth: 0.7, rotate: -10, delay: 1.2, opacity: 0.2 },
-  { src: homepod, alt: "", top: 215, left: 85, size: 150, depth: 0.5, rotate: 0, delay: 0.8, opacity: 0.18 },
+  { src: ipad, alt: "", top: 130, left: 72, size: 200, depth: 0.85, rotate: 14, delay: 0.2, opacity: 0.16 },
+  { src: iphoneBlack, alt: "", top: 175, left: 12, size: 130, depth: 0.7, rotate: -10, delay: 1.2, opacity: 0.2 },
+  { src: airpodsmax, alt: "", top: 215, left: 85, size: 110, depth: 0.5, rotate: 0, delay: 0.8, opacity: 0.2 },
 
   // Feedbacks (220–320vh)
-  { src: airpods, alt: "", top: 250, left: 5, size: 110, depth: 0.3, rotate: -20, delay: 0.4, opacity: 0.14 },
-  { src: watch, alt: "", top: 290, left: 88, size: 140, depth: 0.65, rotate: 18, delay: 1.5, opacity: 0.2 },
-  { src: macbook, alt: "", top: 330, left: 60, size: 240, depth: 0.5, rotate: -6, delay: 0.6, opacity: 0.13 },
+  { src: pencil, alt: "", top: 250, left: 5, size: 100, depth: 0.3, rotate: -20, delay: 0.4, opacity: 0.16 },
+  { src: watchBlack, alt: "", top: 290, left: 88, size: 95, depth: 0.65, rotate: 18, delay: 1.5, opacity: 0.22 },
+  { src: magsafe, alt: "", top: 330, left: 60, size: 110, depth: 0.5, rotate: -6, delay: 0.6, opacity: 0.18 },
 
   // FAQ / Awards (320–440vh)
-  { src: iphoneBlack, alt: "", top: 380, left: 8, size: 180, depth: 0.8, rotate: 8, delay: 0.9, opacity: 0.18 },
-  { src: ipad, alt: "", top: 420, left: 75, size: 260, depth: 0.45, rotate: -12, delay: 1.1, opacity: 0.14 },
-  { src: homepod, alt: "", top: 460, left: 18, size: 130, depth: 0.55, rotate: 0, delay: 0.3, opacity: 0.18 },
+  { src: iphoneBlack, alt: "", top: 380, left: 8, size: 120, depth: 0.8, rotate: 8, delay: 0.9, opacity: 0.18 },
+  { src: visionpro, alt: "", top: 420, left: 75, size: 160, depth: 0.45, rotate: -12, delay: 1.1, opacity: 0.16 },
+  { src: homepod, alt: "", top: 460, left: 18, size: 90, depth: 0.55, rotate: 0, delay: 0.3, opacity: 0.18 },
 
   // Address / Footer area (480–600vh)
-  { src: watch, alt: "", top: 500, left: 80, size: 110, depth: 0.4, rotate: 22, delay: 0.7, opacity: 0.16 },
-  { src: airpods, alt: "", top: 540, left: 30, size: 130, depth: 0.6, rotate: -18, delay: 1.3, opacity: 0.18 },
-  { src: macbook, alt: "", top: 580, left: 65, size: 220, depth: 0.75, rotate: 6, delay: 0.5, opacity: 0.15 },
+  { src: watchBlack, alt: "", top: 500, left: 80, size: 80, depth: 0.4, rotate: 22, delay: 0.7, opacity: 0.18 },
+  { src: airpodscase, alt: "", top: 540, left: 30, size: 100, depth: 0.6, rotate: -18, delay: 1.3, opacity: 0.2 },
+  { src: ipad, alt: "", top: 580, left: 65, size: 160, depth: 0.75, rotate: 6, delay: 0.5, opacity: 0.15 },
 ];
 
 export const ParallaxBackground = () => {
