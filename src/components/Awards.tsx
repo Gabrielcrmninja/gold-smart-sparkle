@@ -4,7 +4,7 @@ import p2 from "@/assets/premio-2.jpg";
 
 export const Awards = () => {
   return (
-    <section id="premios" className="py-14 sm:py-22 relative overflow-hidden">
+    <section id="premios" className="py-14 sm:py-20 relative overflow-hidden">
       <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-primary/10 blur-[120px] rounded-full" />
 
       <div className="container relative">

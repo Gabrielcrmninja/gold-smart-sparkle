@@ -20,7 +20,7 @@ const benefits = [
 
 export const Benefits = () => {
   return (
-    <section id="beneficios" className="py-14 sm:py-22 relative">
+    <section id="beneficios" className="py-14 sm:py-20 relative">
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-primary/10 blur-[120px] rounded-full" />
 
       <div className="container relative">

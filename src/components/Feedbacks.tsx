@@ -43,7 +43,7 @@ export const Feedbacks = () => {
   }, [emblaApi]);
 
   return (
-    <section id="feedbacks" className="py-14 sm:py-22 relative overflow-hidden">
+    <section id="feedbacks" className="py-14 sm:py-20 relative overflow-hidden">
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,hsl(var(--primary)/0.08),transparent_50%)]" />
 
       <div className="container relative">
