@@ -85,7 +85,7 @@ export const Hero = () => {
           {/* Floating badges */}
           <div className="absolute top-8 right-2 sm:right-8 glass-card rounded-2xl px-4 py-3 animate-float-slow shadow-elegant">
             <div className="text-[10px] tracking-widest text-muted-foreground uppercase">Lançamento</div>
-            <div className="font-display text-lg text-gradient-gold">iPhone 17</div>
+            <div className="font-display text-lg text-gradient-gold">17 Pro Max</div>
           </div>
           <div
             className="absolute bottom-12 left-2 sm:left-4 glass-card rounded-2xl px-4 py-3 animate-float-slow shadow-elegant"
