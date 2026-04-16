@@ -8,10 +8,12 @@ import { FloatingWhatsApp } from "@/components/FloatingWhatsApp";
 import { Footer } from "@/components/Footer";
 import { Hero } from "@/components/Hero";
 import { Navbar } from "@/components/Navbar";
+import { ParallaxBackground } from "@/components/ParallaxBackground";
 
 const Index = () => {
   return (
-    <main className="min-h-screen">
+    <main className="relative min-h-screen z-0">
+      <ParallaxBackground />
       <Navbar />
       <Hero />
       <ClientsCarousel />
