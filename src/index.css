@@ -79,7 +79,8 @@
 
   body {
     @apply bg-background text-foreground font-sans antialiased;
-    background: transparent;
+    background: var(--gradient-dark);
+    background-attachment: fixed;
   }
 
   ::selection {
