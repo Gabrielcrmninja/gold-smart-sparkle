@@ -39,7 +39,7 @@ export const Address = () => {
               <div>
                 <div className="text-xs tracking-widest uppercase text-primary mb-1">Contato</div>
                 <a
-                  href="https://wa.me/5533984185744"
+                  href="https://wa.me/33984185744"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-foreground hover:text-primary transition-colors block"
@@ -64,7 +64,7 @@ export const Address = () => {
             </div>
 
             <a
-              href="https://wa.me/5533984185744"
+              href="https://wa.me/33984185744"
               target="_blank"
               rel="noopener noreferrer"
               className="block text-center w-full px-6 py-4 rounded-full bg-gradient-gold text-primary-foreground font-semibold shadow-gold-sm hover:shadow-gold transition-all hover:-translate-y-0.5"

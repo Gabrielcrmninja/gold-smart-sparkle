@@ -36,7 +36,7 @@ export const Hero = () => {
 
           <div className="flex flex-wrap items-center gap-4 mb-12">
             <a
-              href="https://wa.me/5533984185744"
+              href="https://wa.me/33984185744"
               target="_blank"
               rel="noopener noreferrer"
               className="group inline-flex items-center gap-3 px-7 py-4 rounded-full bg-gradient-gold text-primary-foreground font-semibold shadow-gold hover:shadow-glow transition-all duration-500 hover:-translate-y-1"

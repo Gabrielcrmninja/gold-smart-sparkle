@@ -60,7 +60,7 @@ export const Navbar = () => {
         </nav>
 
         <a
-          href="https://wa.me/5533984185744"
+          href="https://wa.me/33984185744"
           target="_blank"
           rel="noopener noreferrer"
           className="hidden lg:inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-gradient-gold text-primary-foreground text-sm font-semibold shadow-gold-sm hover:shadow-gold transition-all hover:-translate-y-0.5"
@@ -91,7 +91,7 @@ export const Navbar = () => {
               </a>
             ))}
             <a
-              href="https://wa.me/5533984185744"
+              href="https://wa.me/33984185744"
               target="_blank"
               rel="noopener noreferrer"
               className="mt-2 inline-flex justify-center items-center gap-2 px-5 py-3 rounded-full bg-gradient-gold text-primary-foreground text-sm font-semibold"
