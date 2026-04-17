@@ -29,7 +29,7 @@ export const Footer = () => {
           </div>
 
           <div>
-            <div className="text-xs tracking-[0.3em] uppercase text-primary mb-4">Empresa</div>
+            <div className="font-action text-xs tracking-[0.3em] uppercase text-primary mb-4">Empresa</div>
             <ul className="space-y-2 text-sm text-muted-foreground">
               <li>
                 <strong className="text-foreground font-medium">H. Oliveira Alves</strong>
@@ -41,7 +41,7 @@ export const Footer = () => {
           </div>
 
           <div>
-            <div className="text-xs tracking-[0.3em] uppercase text-primary mb-4">Conecte-se</div>
+            <div className="font-action text-xs tracking-[0.3em] uppercase text-primary mb-4">Conecte-se</div>
             <div className="flex gap-3 mb-6">
               <a
                 href="https://wa.me/33984185744"

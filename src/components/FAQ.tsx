@@ -37,7 +37,7 @@ export const FAQ = () => {
     <section id="faq" className="py-14 sm:py-20 relative">
       <div className="container max-w-3xl">
         <div className="text-center mb-14">
-          <div className="inline-block text-xs tracking-[0.3em] uppercase text-primary mb-4">
+          <div className="font-action inline-block text-xs tracking-[0.3em] uppercase text-primary mb-4">
             Dúvidas Frequentes
           </div>
           <h2 className="font-display text-4xl sm:text-5xl font-bold mb-4">

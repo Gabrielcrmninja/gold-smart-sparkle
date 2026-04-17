@@ -5,7 +5,7 @@ export const Address = () => {
     <section id="contato" className="py-14 sm:py-20 relative">
       <div className="container">
         <div className="text-center mb-14 max-w-2xl mx-auto">
-          <div className="inline-block text-xs tracking-[0.3em] uppercase text-primary mb-4">
+          <div className="font-action inline-block text-xs tracking-[0.3em] uppercase text-primary mb-4">
             Visite-nos
           </div>
           <h2 className="font-display text-4xl sm:text-5xl font-bold mb-4">
