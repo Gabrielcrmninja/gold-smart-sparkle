@@ -79,7 +79,7 @@ export const Hero = () => {
             alt="iPhone 17 Pro Max laranja"
             loading="eager"
             decoding="async"
-            className="relative z-10 w-full h-full object-contain animate-float drop-shadow-[0_40px_60px_hsl(43_74%_52%/0.35)]"
+            className="relative z-10 w-[90%] h-[90%] mx-auto object-contain animate-float drop-shadow-[0_40px_60px_hsl(43_74%_52%/0.35)]"
             style={{ imageRendering: "auto" }}
           />
         </div>
