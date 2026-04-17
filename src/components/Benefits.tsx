@@ -14,7 +14,7 @@ const benefits = [
   {
     icon: CreditCard,
     title: "Parcelamento Facilitado",
-    desc: "Condições especiais em até 12x, com aprovação rápida e sem complicações no pagamento.",
+    desc: "Condições especiais em até 18x, com aprovação rápida e sem complicações no pagamento.",
   },
 ];
 
@@ -25,8 +25,8 @@ export const Benefits = () => {
 
       <div className="container relative">
         <div className="text-center mb-16 max-w-2xl mx-auto">
-          <div className="inline-block text-xs tracking-[0.3em] uppercase text-primary mb-4">
-            Por que Gold?
+          <div className="font-action inline-block text-xs tracking-[0.3em] uppercase text-primary mb-4">
+            Por que a Gold Smartphones?
           </div>
           <h2 className="font-display text-4xl sm:text-5xl font-bold mb-4">
             Uma experiência <span className="text-gradient-gold">premium</span>
@@ -52,10 +52,6 @@ export const Benefits = () => {
 
               <h3 className="font-display text-2xl font-semibold text-foreground mb-3">{b.title}</h3>
               <p className="text-muted-foreground leading-relaxed text-sm">{b.desc}</p>
-
-              <div className="mt-6 text-xs tracking-widest text-primary/70 uppercase">
-                0{i + 1}
-              </div>
             </div>
           ))}
         </div>

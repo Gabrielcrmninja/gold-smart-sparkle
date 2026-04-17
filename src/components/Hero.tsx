@@ -18,7 +18,7 @@ export const Hero = () => {
 
       <div className="container relative z-10 grid lg:grid-cols-2 gap-12 lg:gap-8 items-center">
         <div className="animate-fade-up">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full glass-card text-xs tracking-[0.3em] uppercase text-primary mb-6">
+          <div className="font-action inline-flex items-center gap-2 px-4 py-1.5 rounded-full glass-card text-xs tracking-[0.3em] uppercase text-primary mb-6">
             <Sparkles size={14} className="text-primary" />
             iPhones
           </div>
@@ -36,10 +36,10 @@ export const Hero = () => {
 
           <div className="flex flex-wrap items-center gap-4 mb-12">
             <a
-              href="https://wa.me/5533984185744"
+              href="https://wa.me/33984185744"
               target="_blank"
               rel="noopener noreferrer"
-              className="group inline-flex items-center gap-3 px-7 py-4 rounded-full bg-gradient-gold text-primary-foreground font-semibold shadow-gold hover:shadow-glow transition-all duration-500 hover:-translate-y-1"
+              className="font-action group inline-flex items-center gap-3 px-7 py-4 rounded-full bg-gradient-gold text-primary-foreground font-semibold shadow-gold hover:shadow-glow transition-all duration-500 hover:-translate-y-1"
             >
               Chamar no WhatsApp
               <ArrowRight
@@ -49,7 +49,7 @@ export const Hero = () => {
             </a>
             <a
               href="#beneficios"
-              className="inline-flex items-center gap-2 px-6 py-4 rounded-full border border-border text-foreground hover:border-primary/60 hover:text-primary transition-all"
+              className="font-action inline-flex items-center gap-2 px-6 py-4 rounded-full border border-border text-foreground hover:border-primary/60 hover:text-primary transition-all"
             >
               Ver benefícios
             </a>

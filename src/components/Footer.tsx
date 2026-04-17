@@ -29,7 +29,7 @@ export const Footer = () => {
           </div>
 
           <div>
-            <div className="text-xs tracking-[0.3em] uppercase text-primary mb-4">Empresa</div>
+            <div className="font-action text-xs tracking-[0.3em] uppercase text-primary mb-4">Empresa</div>
             <ul className="space-y-2 text-sm text-muted-foreground">
               <li>
                 <strong className="text-foreground font-medium">H. Oliveira Alves</strong>
@@ -41,10 +41,10 @@ export const Footer = () => {
           </div>
 
           <div>
-            <div className="text-xs tracking-[0.3em] uppercase text-primary mb-4">Conecte-se</div>
+            <div className="font-action text-xs tracking-[0.3em] uppercase text-primary mb-4">Conecte-se</div>
             <div className="flex gap-3 mb-6">
               <a
-                href="https://wa.me/5533984185744"
+                href="https://wa.me/33984185744"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="WhatsApp"
@@ -53,7 +53,7 @@ export const Footer = () => {
                 <MessageCircle size={18} />
               </a>
               <a
-                href="https://instagram.com"
+                href="https://www.instagram.com/flavianaiphones"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Instagram"
@@ -64,7 +64,7 @@ export const Footer = () => {
             </div>
             <Link
               to="/politica-de-privacidade"
-              className="text-sm text-muted-foreground hover:text-primary transition-colors"
+              className="font-action text-sm text-muted-foreground hover:text-primary transition-colors"
             >
               Política de Privacidade
             </Link>

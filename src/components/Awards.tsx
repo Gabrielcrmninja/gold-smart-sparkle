@@ -9,7 +9,7 @@ export const Awards = () => {
 
       <div className="container relative">
         <div className="text-center mb-16 max-w-2xl mx-auto">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full glass-card text-xs tracking-[0.3em] uppercase text-primary mb-4">
+          <div className="font-action inline-flex items-center gap-2 px-4 py-1.5 rounded-full glass-card text-xs tracking-[0.3em] uppercase text-primary mb-4">
             <Trophy size={14} /> Premiação
           </div>
           <h2 className="font-display text-4xl sm:text-5xl font-bold mb-4">

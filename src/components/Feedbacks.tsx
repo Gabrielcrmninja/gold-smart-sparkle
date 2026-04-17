@@ -1,6 +1,7 @@
-import { useCallback, useEffect, useState } from "react";
+import Autoplay from "embla-carousel-autoplay";
 import useEmblaCarousel from "embla-carousel-react";
 import { ChevronLeft, ChevronRight, Quote, Star } from "lucide-react";
+import { useCallback, useEffect, useRef, useState } from "react";
 
 const feedbacks = [
   {
@@ -26,80 +27,83 @@ const feedbacks = [
 ];
 
 export const Feedbacks = () => {
-  const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true, align: "center" });
+  const autoplay = useRef(
+    Autoplay({ delay: 4500, stopOnInteraction: false, stopOnMouseEnter: true })
+  );
+  const [emblaRef, emblaApi] = useEmblaCarousel(
+    { loop: true, align: "start", slidesToScroll: 1 },
+    [autoplay.current]
+  );
   const [selectedIndex, setSelectedIndex] = useState(0);
+  const [scrollSnaps, setScrollSnaps] = useState<number[]>([]);
 
   const scrollPrev = useCallback(() => emblaApi?.scrollPrev(), [emblaApi]);
   const scrollNext = useCallback(() => emblaApi?.scrollNext(), [emblaApi]);
+  const scrollTo = useCallback(
+    (index: number) => emblaApi?.scrollTo(index),
+    [emblaApi]
+  );
+
+  const onSelect = useCallback(() => {
+    if (!emblaApi) return;
+    setSelectedIndex(emblaApi.selectedScrollSnap());
+  }, [emblaApi]);
 
   useEffect(() => {
     if (!emblaApi) return;
-    const onSelect = () => setSelectedIndex(emblaApi.selectedScrollSnap());
-    emblaApi.on("select", onSelect);
+    setScrollSnaps(emblaApi.scrollSnapList());
     onSelect();
-    return () => {
-      emblaApi.off("select", onSelect);
-    };
-  }, [emblaApi]);
+    emblaApi.on("select", onSelect);
+    emblaApi.on("reInit", onSelect);
+  }, [emblaApi, onSelect]);
 
   return (
     <section id="feedbacks" className="py-14 sm:py-20 relative overflow-hidden">
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,hsl(var(--primary)/0.08),transparent_50%)]" />
 
       <div className="container relative">
-        <div className="text-center mb-16 max-w-2xl mx-auto">
-          <div className="inline-block text-xs tracking-[0.3em] uppercase text-primary mb-4">
+        <div className="text-center mb-14 max-w-2xl mx-auto">
+          <div className="font-action inline-block text-xs tracking-[0.3em] uppercase text-primary mb-4">
             Depoimentos
           </div>
           <h2 className="font-display text-4xl sm:text-5xl font-bold mb-4">
             O que nossos <span className="text-gradient-gold">clientes dizem</span>
           </h2>
+          <p className="text-muted-foreground">
+            Histórias reais de quem escolheu a Gold para a sua nova experiência iPhone.
+          </p>
         </div>
 
-        <div className="relative max-w-5xl mx-auto">
-          <button
-            onClick={scrollPrev}
-            aria-label="Anterior"
-            className="hidden md:flex absolute -left-4 lg:-left-16 top-1/2 -translate-y-1/2 z-10 w-12 h-12 rounded-full glass-card items-center justify-center text-primary hover:bg-gradient-gold hover:text-primary-foreground transition-all hover:scale-110"
-          >
-            <ChevronLeft size={22} />
-          </button>
-          <button
-            onClick={scrollNext}
-            aria-label="Próximo"
-            className="hidden md:flex absolute -right-4 lg:-right-16 top-1/2 -translate-y-1/2 z-10 w-12 h-12 rounded-full glass-card items-center justify-center text-primary hover:bg-gradient-gold hover:text-primary-foreground transition-all hover:scale-110"
-          >
-            <ChevronRight size={22} />
-          </button>
-
+        <div className="relative max-w-6xl mx-auto">
           <div className="overflow-hidden" ref={emblaRef}>
             <div className="flex">
               {feedbacks.map((f, i) => (
-                <div key={i} className="flex-[0_0_100%] md:flex-[0_0_80%] px-4 md:px-6">
-                  <div className="glass-card rounded-3xl p-8 sm:p-12 relative">
+                <div
+                  key={i}
+                  className="flex-[0_0_100%] sm:flex-[0_0_50%] lg:flex-[0_0_33.3333%] min-w-0 px-3"
+                >
+                  <div className="relative glass-card rounded-2xl gold-border shadow-elegant p-8 h-full flex flex-col">
                     <Quote
-                      className="absolute top-6 right-6 w-12 h-12 text-primary/20"
+                      className="absolute top-5 right-5 w-10 h-10 text-primary/20"
                       strokeWidth={1}
                     />
-                    <div className="flex gap-1 mb-6">
+                    <div className="flex gap-1 mb-5">
                       {Array.from({ length: f.rating }).map((_, s) => (
-                        <Star
-                          key={s}
-                          size={18}
-                          className="fill-primary text-primary"
-                        />
+                        <Star key={s} size={16} className="fill-primary text-primary" />
                       ))}
                     </div>
-                    <p className="font-display text-xl sm:text-2xl text-foreground/95 leading-relaxed mb-8 italic">
+                    <p className="text-foreground/95 leading-relaxed mb-6 italic flex-1">
                       “{f.text}”
                     </p>
-                    <div className="flex items-center gap-4">
-                      <div className="w-12 h-12 rounded-full bg-gradient-gold flex items-center justify-center font-bold text-primary-foreground">
+                    <div className="flex items-center gap-3 pt-4 border-t border-border/40">
+                      <div className="w-11 h-11 rounded-full bg-gradient-gold flex items-center justify-center font-action font-bold text-primary-foreground">
                         {f.name.charAt(0)}
                       </div>
                       <div>
-                        <div className="font-semibold text-foreground">{f.name}</div>
-                        <div className="text-xs text-muted-foreground tracking-wider uppercase">
+                        <div className="font-action font-semibold text-foreground text-sm">
+                          {f.name}
+                        </div>
+                        <div className="font-action text-[10px] text-muted-foreground tracking-[0.2em] uppercase">
                           Cliente verificado
                         </div>
                       </div>
@@ -110,32 +114,34 @@ export const Feedbacks = () => {
             </div>
           </div>
 
-          {/* Mobile arrows + dots */}
-          <div className="flex md:hidden items-center justify-center gap-3 mt-8">
-            <button
-              onClick={scrollPrev}
-              aria-label="Anterior"
-              className="w-10 h-10 rounded-full glass-card flex items-center justify-center text-primary"
-            >
-              <ChevronLeft size={18} />
-            </button>
-            {feedbacks.map((_, i) => (
+          <button
+            onClick={scrollPrev}
+            aria-label="Depoimento anterior"
+            className="absolute left-2 sm:-left-4 top-1/2 -translate-y-1/2 z-10 h-12 w-12 rounded-full bg-background/80 backdrop-blur-sm border border-primary/40 text-primary hover:bg-primary hover:text-primary-foreground transition-all shadow-elegant flex items-center justify-center"
+          >
+            <ChevronLeft className="h-6 w-6" />
+          </button>
+          <button
+            onClick={scrollNext}
+            aria-label="Próximo depoimento"
+            className="absolute right-2 sm:-right-4 top-1/2 -translate-y-1/2 z-10 h-12 w-12 rounded-full bg-background/80 backdrop-blur-sm border border-primary/40 text-primary hover:bg-primary hover:text-primary-foreground transition-all shadow-elegant flex items-center justify-center"
+          >
+            <ChevronRight className="h-6 w-6" />
+          </button>
+
+          <div className="flex justify-center gap-2 mt-8">
+            {scrollSnaps.map((_, index) => (
               <button
-                key={i}
-                onClick={() => emblaApi?.scrollTo(i)}
+                key={index}
+                onClick={() => scrollTo(index)}
+                aria-label={`Ir para depoimento ${index + 1}`}
                 className={`h-2 rounded-full transition-all ${
-                  i === selectedIndex ? "bg-gradient-gold w-8" : "bg-muted w-2"
+                  index === selectedIndex
+                    ? "w-8 bg-primary"
+                    : "w-2 bg-primary/30 hover:bg-primary/50"
                 }`}
-                aria-label={`Ir para depoimento ${i + 1}`}
               />
             ))}
-            <button
-              onClick={scrollNext}
-              aria-label="Próximo"
-              className="w-10 h-10 rounded-full glass-card flex items-center justify-center text-primary"
-            >
-              <ChevronRight size={18} />
-            </button>
           </div>
         </div>
       </div>

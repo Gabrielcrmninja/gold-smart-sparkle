@@ -5,7 +5,7 @@ export const Address = () => {
     <section id="contato" className="py-14 sm:py-20 relative">
       <div className="container">
         <div className="text-center mb-14 max-w-2xl mx-auto">
-          <div className="inline-block text-xs tracking-[0.3em] uppercase text-primary mb-4">
+          <div className="font-action inline-block text-xs tracking-[0.3em] uppercase text-primary mb-4">
             Visite-nos
           </div>
           <h2 className="font-display text-4xl sm:text-5xl font-bold mb-4">
@@ -39,7 +39,7 @@ export const Address = () => {
               <div>
                 <div className="text-xs tracking-widest uppercase text-primary mb-1">Contato</div>
                 <a
-                  href="https://wa.me/5533984185744"
+                  href="https://wa.me/33984185744"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-foreground hover:text-primary transition-colors block"
@@ -64,10 +64,10 @@ export const Address = () => {
             </div>
 
             <a
-              href="https://wa.me/5533984185744"
+              href="https://wa.me/33984185744"
               target="_blank"
               rel="noopener noreferrer"
-              className="block text-center w-full px-6 py-4 rounded-full bg-gradient-gold text-primary-foreground font-semibold shadow-gold-sm hover:shadow-gold transition-all hover:-translate-y-0.5"
+              className="font-action block text-center w-full px-6 py-4 rounded-full bg-gradient-gold text-primary-foreground font-semibold shadow-gold-sm hover:shadow-gold transition-all hover:-translate-y-0.5"
             >
               Falar no WhatsApp
             </a>
@@ -77,7 +77,7 @@ export const Address = () => {
             <iframe
               title="Localização Gold SmartPhones"
               src="https://www.google.com/maps?q=Rua+Arthur+Bernardes,+146,+Ipanema,+MG&output=embed"
-              className="w-full h-full grayscale contrast-125"
+              className="w-full h-full"
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
             />
