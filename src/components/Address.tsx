@@ -67,7 +67,7 @@ export const Address = () => {
               href="https://wa.me/33984185744"
               target="_blank"
               rel="noopener noreferrer"
-              className="block text-center w-full px-6 py-4 rounded-full bg-gradient-gold text-primary-foreground font-semibold shadow-gold-sm hover:shadow-gold transition-all hover:-translate-y-0.5"
+              className="font-action block text-center w-full px-6 py-4 rounded-full bg-gradient-gold text-primary-foreground font-semibold shadow-gold-sm hover:shadow-gold transition-all hover:-translate-y-0.5"
             >
               Falar no WhatsApp
             </a>

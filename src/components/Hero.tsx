@@ -39,7 +39,7 @@ export const Hero = () => {
               href="https://wa.me/33984185744"
               target="_blank"
               rel="noopener noreferrer"
-              className="group inline-flex items-center gap-3 px-7 py-4 rounded-full bg-gradient-gold text-primary-foreground font-semibold shadow-gold hover:shadow-glow transition-all duration-500 hover:-translate-y-1"
+              className="font-action group inline-flex items-center gap-3 px-7 py-4 rounded-full bg-gradient-gold text-primary-foreground font-semibold shadow-gold hover:shadow-glow transition-all duration-500 hover:-translate-y-1"
             >
               Chamar no WhatsApp
               <ArrowRight
@@ -49,7 +49,7 @@ export const Hero = () => {
             </a>
             <a
               href="#beneficios"
-              className="inline-flex items-center gap-2 px-6 py-4 rounded-full border border-border text-foreground hover:border-primary/60 hover:text-primary transition-all"
+              className="font-action inline-flex items-center gap-2 px-6 py-4 rounded-full border border-border text-foreground hover:border-primary/60 hover:text-primary transition-all"
             >
               Ver benefícios
             </a>

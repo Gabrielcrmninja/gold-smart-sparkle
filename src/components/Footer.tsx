@@ -64,7 +64,7 @@ export const Footer = () => {
             </div>
             <Link
               to="/politica-de-privacidade"
-              className="text-sm text-muted-foreground hover:text-primary transition-colors"
+              className="font-action text-sm text-muted-foreground hover:text-primary transition-colors"
             >
               Política de Privacidade
             </Link>

@@ -51,7 +51,7 @@ export const Navbar = () => {
             <a
               key={l.href}
               href={l.href}
-              className="text-sm text-muted-foreground hover:text-primary transition-colors relative group"
+              className="font-action text-sm text-muted-foreground hover:text-primary transition-colors relative group"
             >
               {l.label}
               <span className="absolute -bottom-1 left-0 w-0 h-px bg-gradient-gold group-hover:w-full transition-all duration-300" />
@@ -63,7 +63,7 @@ export const Navbar = () => {
           href="https://wa.me/33984185744"
           target="_blank"
           rel="noopener noreferrer"
-          className="hidden lg:inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-gradient-gold text-primary-foreground text-sm font-semibold shadow-gold-sm hover:shadow-gold transition-all hover:-translate-y-0.5"
+          className="font-action hidden lg:inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-gradient-gold text-primary-foreground text-sm font-semibold shadow-gold-sm hover:shadow-gold transition-all hover:-translate-y-0.5"
         >
           WhatsApp
         </a>
@@ -85,7 +85,7 @@ export const Navbar = () => {
                 key={l.href}
                 href={l.href}
                 onClick={() => setOpen(false)}
-                className="text-base text-muted-foreground hover:text-primary"
+                className="font-action text-base text-muted-foreground hover:text-primary"
               >
                 {l.label}
               </a>
@@ -94,7 +94,7 @@ export const Navbar = () => {
               href="https://wa.me/33984185744"
               target="_blank"
               rel="noopener noreferrer"
-              className="mt-2 inline-flex justify-center items-center gap-2 px-5 py-3 rounded-full bg-gradient-gold text-primary-foreground text-sm font-semibold"
+              className="font-action mt-2 inline-flex justify-center items-center gap-2 px-5 py-3 rounded-full bg-gradient-gold text-primary-foreground text-sm font-semibold"
             >
               Chamar no WhatsApp
             </a>
