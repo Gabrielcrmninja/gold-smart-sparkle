@@ -16,7 +16,7 @@ const faqs = [
   },
   {
     q: "Aceitam parcelamento?",
-    a: "Sim! Parcelamos em até 12x sem juros no cartão de crédito, e oferecemos diversas outras formas de pagamento como Pix, débito e financiamento.",
+    a: "Sim! Parcelamos em até 18x sem juros no cartão de crédito, e oferecemos diversas outras formas de pagamento como Pix, débito e financiamento.",
   },
   {
     q: "Os iPhones seminovos são originais?",

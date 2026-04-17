@@ -44,7 +44,7 @@ export const Footer = () => {
             <div className="text-xs tracking-[0.3em] uppercase text-primary mb-4">Conecte-se</div>
             <div className="flex gap-3 mb-6">
               <a
-                href="https://wa.me/5533984185744"
+                href="https://wa.me/33984185744"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="WhatsApp"
@@ -53,7 +53,7 @@ export const Footer = () => {
                 <MessageCircle size={18} />
               </a>
               <a
-                href="https://instagram.com"
+                href="https://www.instagram.com/flavianaiphones"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Instagram"

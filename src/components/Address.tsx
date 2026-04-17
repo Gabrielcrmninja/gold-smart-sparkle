@@ -77,7 +77,7 @@ export const Address = () => {
             <iframe
               title="Localização Gold SmartPhones"
               src="https://www.google.com/maps?q=Rua+Arthur+Bernardes,+146,+Ipanema,+MG&output=embed"
-              className="w-full h-full grayscale contrast-125"
+              className="w-full h-full"
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
             />
