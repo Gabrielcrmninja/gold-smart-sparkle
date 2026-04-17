@@ -14,11 +14,11 @@ const Index = () => {
     <main className="min-h-screen">
       <Navbar />
       <Hero />
-      <ClientsCarousel />
+      <Awards />
       <Benefits />
       <Feedbacks />
+      <ClientsCarousel />
       <FAQ />
-      <Awards />
       <Address />
       <Footer />
       <FloatingWhatsApp />
