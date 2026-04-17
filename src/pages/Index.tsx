@@ -27,15 +27,6 @@ const Index = () => {
       </div>
       <FloatingWhatsApp />
     </main>
-      <Awards />
-      <Benefits />
-      <Feedbacks />
-      <ClientsCarousel />
-      <FAQ />
-      <Address />
-      <Footer />
-      <FloatingWhatsApp />
-    </main>
   );
 };
 
