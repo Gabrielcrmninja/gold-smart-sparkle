@@ -12,17 +12,19 @@ import { Navbar } from "@/components/Navbar";
 
 const Index = () => {
   return (
-    <main className="min-h-screen">
+    <main className="min-h-screen relative">
       <CursorSpotlight />
-      <Navbar />
-      <Hero />
-      <Awards />
-      <Benefits />
-      <Feedbacks />
-      <ClientsCarousel />
-      <FAQ />
-      <Address />
-      <Footer />
+      <div className="relative z-10">
+        <Navbar />
+        <Hero />
+        <Awards />
+        <Benefits />
+        <Feedbacks />
+        <ClientsCarousel />
+        <FAQ />
+        <Address />
+        <Footer />
+      </div>
       <FloatingWhatsApp />
     </main>
   );

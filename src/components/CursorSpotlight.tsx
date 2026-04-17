@@ -44,7 +44,7 @@ export const CursorSpotlight = () => {
   }, []);
 
   return (
-    <div className="pointer-events-none fixed inset-0 z-[5] overflow-hidden hidden md:block">
+    <div className="pointer-events-none fixed inset-0 z-0 overflow-hidden hidden md:block">
       {/* Outer soft glow */}
       <div
         ref={outerRef}
