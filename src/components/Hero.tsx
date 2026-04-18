@@ -18,7 +18,8 @@ export const Hero = () => {
       />
 
       <div className="container relative z-10 grid lg:grid-cols-2 gap-12 lg:gap-8 items-center">
-        <div className="animate-fade-up">
+        {/* Adicionado pl-8 lg:pl-24 e -mt-10 para mover todo o bloco para direita e para cima */}
+        <div className="animate-fade-up pl-8 lg:pl-24 -mt-10">
 
           {/* Logo Principal: Ajustada para ficar maior e bem alinhada */}
           {/* Logo Principal - Ajuste Premium */}
