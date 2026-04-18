@@ -1,5 +1,6 @@
 import { ArrowRight, ShieldCheck, Sparkles } from "lucide-react";
 import iphone from "@/assets/iphone-hero.png";
+import newLogo from "@/assets/logo-gold.png";
 
 export const Hero = () => {
   return (
@@ -17,10 +18,22 @@ export const Hero = () => {
       />
 
       <div className="container relative z-10 grid lg:grid-cols-2 gap-12 lg:gap-8 items-center">
-        <div className="animate-fade-up">
+        {/* Bloco de conteúdo com padding à esquerda para centralizar melhor com o iPhone */}
+        <div className="animate-fade-up lg:pl-16 -mt-12">
+
+          {/* Sobrancelha (Badge iPhones) */}
           <div className="font-action inline-flex items-center gap-2 px-4 py-1.5 rounded-full glass-card text-xs tracking-[0.3em] uppercase text-primary mb-6">
             <Sparkles size={14} className="text-primary" />
             iPhones
+          </div>
+
+          {/* Logo: Aumentada e alinhada com a sobrancelha (sem margens negativas) */}
+          <div className="mb-6 lg:mb-8 animate-fade-up">
+            <img
+              src={newLogo}
+              alt="Go Id! SmartPhones"
+              className="w-72 sm:w-96 md:w-[450px] object-contain drop-shadow-2xl"
+            />
           </div>
 
           <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold leading-[1.1] mb-6">
