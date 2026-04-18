@@ -32,15 +32,15 @@ export const CursorSpotlight = () => {
       target.current.y = e.clientY;
 
       // Criação do "Fairy Dust" (partículas)
-      for (let i = 0; i < 3; i++) {
+      for (let i = 0; i < 6; i++) {
         particles.current.push({
           x: e.clientX,
           y: e.clientY,
-          vx: (Math.random() - 0.5) * 1.2,
-          vy: (Math.random() - 0.5) * 1.2,
+          vx: (Math.random() - 0.5) * 1.6,
+          vy: (Math.random() - 0.5) * 1.6,
           life: 1.0,
-          size: Math.random() * 2 + 0.5,
-          color: `hsla(${40 + Math.random() * 10}, 90%, 70%, `,
+          size: Math.random() * 2.8 + 0.8,
+          color: `hsla(${40 + Math.random() * 12}, 95%, 75%, `,
         });
       }
     };
@@ -122,10 +122,10 @@ export const CursorSpotlight = () => {
       {/* Brilho Externo (Glow Suave) */}
       <div
         ref={outerRef}
-        className="absolute w-[700px] h-[700px] rounded-full will-change-transform opacity-70"
+        className="absolute w-[700px] h-[700px] rounded-full will-change-transform opacity-50"
         style={{
           background:
-            "radial-gradient(circle, hsl(43 74% 52% / 0.1) 0%, hsl(43 74% 52% / 0.03) 40%, transparent 75%)",
+            "radial-gradient(circle, hsl(43 74% 52% / 0.07) 0%, hsl(43 74% 52% / 0.02) 40%, transparent 75%)",
           filter: "blur(30px)",
         }}
       />
@@ -133,10 +133,10 @@ export const CursorSpotlight = () => {
       {/* Brilho Interno (Destaque Central) */}
       <div
         ref={innerRef}
-        className="absolute w-[300px] h-[300px] rounded-full will-change-transform mix-blend-screen opacity-50"
+        className="absolute w-[300px] h-[300px] rounded-full will-change-transform mix-blend-screen opacity-35"
         style={{
           background:
-            "radial-gradient(circle, hsl(45 95% 70% / 0.15) 0%, hsl(43 74% 52% / 0.05) 50%, transparent 70%)",
+            "radial-gradient(circle, hsl(45 95% 70% / 0.10) 0%, hsl(43 74% 52% / 0.035) 50%, transparent 70%)",
         }}
       />
     </div>
