@@ -32,15 +32,15 @@ export const CursorSpotlight = () => {
       target.current.y = e.clientY;
 
       // Criação do "Fairy Dust" (partículas)
-      for (let i = 0; i < 3; i++) {
+      for (let i = 0; i < 6; i++) {
         particles.current.push({
           x: e.clientX,
           y: e.clientY,
-          vx: (Math.random() - 0.5) * 1.2,
-          vy: (Math.random() - 0.5) * 1.2,
+          vx: (Math.random() - 0.5) * 1.6,
+          vy: (Math.random() - 0.5) * 1.6,
           life: 1.0,
-          size: Math.random() * 2 + 0.5,
-          color: `hsla(${40 + Math.random() * 10}, 90%, 70%, `,
+          size: Math.random() * 2.8 + 0.8,
+          color: `hsla(${40 + Math.random() * 12}, 95%, 75%, `,
         });
       }
     };
