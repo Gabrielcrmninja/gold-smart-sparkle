@@ -1,6 +1,5 @@
 import { ArrowRight, ShieldCheck, Sparkles } from "lucide-react";
 import iphone from "@/assets/iphone-hero.png";
-import newLogo from "@/assets/logo-gold.png";
 
 export const Hero = () => {
   return (
@@ -18,18 +17,12 @@ export const Hero = () => {
       />
 
       <div className="container relative z-10 grid lg:grid-cols-2 gap-12 lg:gap-8 items-center">
-        {/* Adicionado pl-8 lg:pl-24 e -mt-10 para mover todo o bloco para direita e para cima */}
-        <div className="animate-fade-up pl-8 lg:pl-24 -mt-10">
-
-          {/* Logo Principal: Ajustada para ficar maior e bem alinhada */}
-          {/* Logo Principal - Ajuste Premium */}
-          <div className="mb-1 animate-fade-up -mt-14 ml-4 sm:ml-12">
-            <img
-              src={newLogo}
-              alt="Go Id! SmartPhones"
-              className="w-40 sm:w-52 md:w-60 object-contain drop-shadow-xl"
-            />
+        <div className="animate-fade-up">
+          <div className="font-action inline-flex items-center gap-2 px-4 py-1.5 rounded-full glass-card text-xs tracking-[0.3em] uppercase text-primary mb-6">
+            <Sparkles size={14} className="text-primary" />
+            iPhones
           </div>
+
           <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold leading-[1.1] mb-6">
             <span className="block text-foreground">Novos &amp;</span>
             <span className="inline-block text-gradient-gold animate-shimmer bg-clip-text pb-3 pr-4">Seminovos</span>
@@ -49,7 +42,16 @@ export const Hero = () => {
               className="font-action group inline-flex items-center gap-3 px-7 py-4 rounded-full bg-gradient-gold text-primary-foreground font-semibold shadow-gold hover:shadow-glow transition-all duration-500 hover:-translate-y-1"
             >
               Chamar no WhatsApp
-              <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
+              <ArrowRight
+                size={18}
+                className="group-hover:translate-x-1 transition-transform"
+              />
+            </a>
+            <a
+              href="#beneficios"
+              className="font-action inline-flex items-center gap-2 px-6 py-4 rounded-full border border-border text-foreground hover:border-primary/60 hover:text-primary transition-all"
+            >
+              Ver benefícios
             </a>
           </div>
 
@@ -65,13 +67,20 @@ export const Hero = () => {
           </div>
         </div>
 
-        {/* Lado do iPhone */}
         <div className="relative h-[420px] sm:h-[520px] lg:h-[640px]">
+          {/* Radial backdrop */}
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,hsl(var(--primary)/0.35),transparent_60%)]" />
+          {/* Floating ring */}
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80%] aspect-square rounded-full border border-primary/20 animate-glow-pulse" />
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[55%] aspect-square rounded-full border border-primary/30" />
+
           <img
             src={iphone}
-            alt="iPhone"
-            className="relative z-10 w-[90%] h-[90%] mx-auto object-contain animate-float"
+            alt="iPhone 17 Pro Max laranja"
+            loading="eager"
+            decoding="async"
+            className="relative z-10 w-[90%] h-[90%] mx-auto object-contain animate-float drop-shadow-[0_40px_60px_hsl(43_74%_52%/0.35)]"
+            style={{ imageRendering: "auto" }}
           />
         </div>
       </div>
