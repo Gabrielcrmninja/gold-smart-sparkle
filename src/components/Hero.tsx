@@ -1,5 +1,6 @@
 import { ArrowRight, ShieldCheck, Sparkles } from "lucide-react";
 import iphone from "@/assets/iphone-hero.png";
+import newLogo from "@/assets/logo-gold.png";
 
 export const Hero = () => {
   return (
@@ -21,6 +22,14 @@ export const Hero = () => {
           <div className="font-action inline-flex items-center gap-2 px-4 py-1.5 rounded-full glass-card text-xs tracking-[0.3em] uppercase text-primary mb-6">
             <Sparkles size={14} className="text-primary" />
             iPhones
+          </div>
+
+          <div className="mb-6 lg:mb-8 animate-fade-up">
+            <img 
+              src={newLogo} 
+              alt="Go Id! SmartPhones" 
+              className="w-64 sm:w-80 md:w-96 object-contain drop-shadow-2xl"
+            />
           </div>
 
           <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold leading-[1.1] mb-6">

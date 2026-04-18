@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
-import logo from "@/assets/logo.jpg";
+import newLogo from "@/assets/logo-gold.png";
 
 const links = [
   { label: "Início", href: "#hero" },
@@ -32,18 +32,11 @@ export const Navbar = () => {
     >
       <div className="container flex items-center justify-between">
         <a href="#hero" className="flex items-center gap-3 group">
-          <div className="relative">
-            <div className="absolute inset-0 rounded-full bg-gradient-gold blur-lg opacity-40 group-hover:opacity-70 transition-opacity" />
-            <img
-              src={logo}
-              alt="Gold SmartPhones"
-              className="relative h-10 w-10 rounded-full object-cover border border-primary/40"
-            />
-          </div>
-          <div className="leading-tight">
-            <div className="font-display text-base sm:text-lg font-bold text-gradient-gold">Gold</div>
-            <div className="text-[10px] tracking-[0.25em] text-muted-foreground uppercase">SmartPhones</div>
-          </div>
+          <img
+            src={newLogo}
+            alt="Go Id! SmartPhones"
+            className="h-14 sm:h-16 object-contain transition-transform group-hover:scale-105"
+          />
         </a>
 
         <nav className="hidden lg:flex items-center gap-8">
