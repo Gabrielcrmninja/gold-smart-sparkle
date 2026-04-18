@@ -34,7 +34,7 @@ export const Navbar = () => {
           <img
             src={newLogo}
             alt="Go Id! SmartPhones"
-            className="h-14 sm:h-16 object-contain transition-transform group-hover:scale-130"
+            className="h-14 sm:h-16 object-contain transition-transform group-hover:scale-145"
           />
         </a>
 
