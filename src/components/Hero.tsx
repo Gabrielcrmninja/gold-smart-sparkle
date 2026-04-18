@@ -22,14 +22,13 @@ export const Hero = () => {
 
           {/* Logo Principal: Ajustada para ficar maior e bem alinhada */}
           {/* Logo Principal - Ajuste Premium */}
-          <div className="mb-2 animate-fade-up">
+          <div className="mb-1 animate-fade-up -mt-8 ml-4 sm:ml-8">
             <img
               src={newLogo}
               alt="Go Id! SmartPhones"
-              className="w-40 sm:w-52 md:w-60 object-contain drop-shadow-xl -ml-2"
+              className="w-40 sm:w-52 md:w-60 object-contain drop-shadow-xl"
             />
           </div>
-
           <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold leading-[1.1] mb-6">
             <span className="block text-foreground">Novos &amp;</span>
             <span className="inline-block text-gradient-gold animate-shimmer bg-clip-text pb-3 pr-4">Seminovos</span>
