@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
-import newLogo from "@/assets/logo-gold.png";
 
 const links = [
   { label: "Início", href: "#hero" },
@@ -24,19 +23,15 @@ export const Navbar = () => {
 
   return (
     <header
-      className={`fixed top-0 inset-x-0 z-50 transition-all duration-500 ${
-        scrolled
+      className={`fixed top-0 inset-x-0 z-50 transition-all duration-500 ${scrolled
           ? "bg-background/85 backdrop-blur-xl border-b border-border/40 py-3"
           : "bg-transparent py-5"
-      }`}
+        }`}
     >
       <div className="container flex items-center justify-between">
+        {/* Lado Esquerdo: Vazio ou apenas um espaçador agora que a logo saiu */}
         <a href="#hero" className="flex items-center gap-3 group">
-          <img
-            src={newLogo}
-            alt="Go Id! SmartPhones"
-            className="h-14 sm:h-16 object-contain transition-transform group-hover:scale-105"
-          />
+          {/* Logo removida daqui */}
         </a>
 
         <nav className="hidden lg:flex items-center gap-8">
@@ -69,31 +64,6 @@ export const Navbar = () => {
           {open ? <X size={24} /> : <Menu size={24} />}
         </button>
       </div>
-
-      {open && (
-        <div className="lg:hidden absolute top-full inset-x-0 bg-background/95 backdrop-blur-xl border-b border-border/40">
-          <div className="container py-6 flex flex-col gap-4">
-            {links.map((l) => (
-              <a
-                key={l.href}
-                href={l.href}
-                onClick={() => setOpen(false)}
-                className="font-action text-base text-muted-foreground hover:text-primary"
-              >
-                {l.label}
-              </a>
-            ))}
-            <a
-              href="https://wa.me/33984185744"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="font-action mt-2 inline-flex justify-center items-center gap-2 px-5 py-3 rounded-full bg-gradient-gold text-primary-foreground text-sm font-semibold"
-            >
-              Chamar no WhatsApp
-            </a>
-          </div>
-        </div>
-      )}
     </header>
   );
 };
