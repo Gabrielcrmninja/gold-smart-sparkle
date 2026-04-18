@@ -19,16 +19,13 @@ export const Hero = () => {
 
       <div className="container relative z-10 grid lg:grid-cols-2 gap-12 lg:gap-8 items-center">
         <div className="animate-fade-up">
-          <div className="font-action inline-flex items-center gap-2 px-4 py-1.5 rounded-full glass-card text-xs tracking-[0.3em] uppercase text-primary mb-6">
-            <Sparkles size={14} className="text-primary" />
-            iPhones
-          </div>
 
-          <div className="mb-6 lg:mb-8 animate-fade-up">
-            <img 
-              src={newLogo} 
-              alt="Go Id! SmartPhones" 
-              className="w-64 sm:w-80 md:w-96 object-contain drop-shadow-2xl"
+          {/* Logo Principal: Ajustada para ficar maior e bem alinhada */}
+          <div className="mb-4 animate-fade-up">
+            <img
+              src={newLogo}
+              alt="Go Id! SmartPhones"
+              className="w-72 sm:w-96 md:w-[450px] object-contain drop-shadow-2xl -ml-6"
             />
           </div>
 
@@ -51,16 +48,7 @@ export const Hero = () => {
               className="font-action group inline-flex items-center gap-3 px-7 py-4 rounded-full bg-gradient-gold text-primary-foreground font-semibold shadow-gold hover:shadow-glow transition-all duration-500 hover:-translate-y-1"
             >
               Chamar no WhatsApp
-              <ArrowRight
-                size={18}
-                className="group-hover:translate-x-1 transition-transform"
-              />
-            </a>
-            <a
-              href="#beneficios"
-              className="font-action inline-flex items-center gap-2 px-6 py-4 rounded-full border border-border text-foreground hover:border-primary/60 hover:text-primary transition-all"
-            >
-              Ver benefícios
+              <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
             </a>
           </div>
 
@@ -76,20 +64,13 @@ export const Hero = () => {
           </div>
         </div>
 
+        {/* Lado do iPhone */}
         <div className="relative h-[420px] sm:h-[520px] lg:h-[640px]">
-          {/* Radial backdrop */}
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,hsl(var(--primary)/0.35),transparent_60%)]" />
-          {/* Floating ring */}
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80%] aspect-square rounded-full border border-primary/20 animate-glow-pulse" />
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[55%] aspect-square rounded-full border border-primary/30" />
-
           <img
             src={iphone}
-            alt="iPhone 17 Pro Max laranja"
-            loading="eager"
-            decoding="async"
-            className="relative z-10 w-[90%] h-[90%] mx-auto object-contain animate-float drop-shadow-[0_40px_60px_hsl(43_74%_52%/0.35)]"
-            style={{ imageRendering: "auto" }}
+            alt="iPhone"
+            className="relative z-10 w-[90%] h-[90%] mx-auto object-contain animate-float"
           />
         </div>
       </div>
