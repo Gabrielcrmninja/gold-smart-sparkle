@@ -23,9 +23,9 @@ export const Hero = () => {
             iPhones
           </div>
 
-          <h1 className="font-display text-5xl sm:text-6xl lg:text-7xl xl:text-8xl font-bold leading-[1.05] mb-6 pr-2">
+          <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold leading-[1.1] mb-6">
             <span className="block text-foreground">Novos &amp;</span>
-            <span className="block text-gradient-gold animate-shimmer bg-clip-text pb-2 pr-2">Seminovos</span>
+            <span className="inline-block text-gradient-gold animate-shimmer bg-clip-text pb-3 pr-4">Seminovos</span>
           </h1>
 
           <p className="text-base sm:text-lg text-muted-foreground max-w-xl mb-10 leading-relaxed">
