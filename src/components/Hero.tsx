@@ -22,7 +22,7 @@ export const Hero = () => {
 
           {/* Logo Principal: Ajustada para ficar maior e bem alinhada */}
           {/* Logo Principal - Ajuste Premium */}
-          <div className="mb-1 animate-fade-up -mt-12 ml-4 sm:ml-12">
+          <div className="mb-1 animate-fade-up -mt-14 ml-4 sm:ml-14">
             <img
               src={newLogo}
               alt="Go Id! SmartPhones"
