@@ -25,16 +25,18 @@ export const Navbar = () => {
   return (
     <header
       className={`fixed top-0 inset-x-0 z-50 transition-all duration-500 ${scrolled
-        ? "bg-background/85 backdrop-blur-xl border-b border-border/40 py-3"
-        : "bg-transparent py-5"
+          ? "bg-background/85 backdrop-blur-xl border-b border-border/40 py-3"
+          : "bg-transparent py-5"
         }`}
     >
       <div className="container flex items-center justify-between">
-        <a href="#hero" className="flex items-center gap-3 group">
+
+        {/* LOGO AJUSTADA */}
+        <a href="#hero" className="flex items-center gap-3 group ml-2">
           <img
             src={newLogo}
             alt="Go Id! SmartPhones"
-            className="h-14 sm:h-16 object-contain transition-transform group-hover:scale-150"
+            className="h-14 sm:h-16 object-contain transition-transform duration-300 origin-left group-hover:scale-150"
           />
         </a>
 

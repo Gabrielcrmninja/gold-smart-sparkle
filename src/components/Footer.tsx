@@ -9,30 +9,34 @@ export const Footer = () => {
 
       <div className="container">
         <div className="grid md:grid-cols-3 gap-10 mb-12">
+
+          {/* LOGO AJUSTADA */}
           <div>
-            <div className="flex items-center gap-3 mb-4">
-              <img
-                src={logo}
-                alt="Gold SmartPhones"
-                className="h-12 w-12 rounded-full object-cover border border-primary/40"
-              />
-              <div>
-                <div className="font-display text-xl font-bold text-gradient-gold">Gold</div>
-                <div className="text-[10px] tracking-[0.25em] text-muted-foreground uppercase">
-                  SmartPhones
-                </div>
-              </div>
+            <div className="flex items-center mb-4">
+              <a href="#hero" className="group inline-block ml-2">
+                <img
+                  src={logo}
+                  alt="Gold SmartPhones"
+                  className="h-14 sm:h-16 object-contain transition-transform duration-300 origin-left group-hover:scale-150"
+                />
+              </a>
             </div>
+
             <p className="text-sm text-muted-foreground leading-relaxed max-w-xs">
               Sua loja premium de iPhones com garantia, brindes exclusivos e o melhor atendimento.
             </p>
           </div>
 
+          {/* EMPRESA */}
           <div>
-            <div className="font-action text-xs tracking-[0.3em] uppercase text-primary mb-4">Empresa</div>
+            <div className="font-action text-xs tracking-[0.3em] uppercase text-primary mb-4">
+              Empresa
+            </div>
             <ul className="space-y-2 text-sm text-muted-foreground">
               <li>
-                <strong className="text-foreground font-medium">H. Oliveira Alves</strong>
+                <strong className="text-foreground font-medium">
+                  H. Oliveira Alves
+                </strong>
               </li>
               <li>CNPJ: 43.083.804/0001-04</li>
               <li>Rua Arthur Bernardes, 146 — Ipanema/MG</li>
@@ -40,8 +44,12 @@ export const Footer = () => {
             </ul>
           </div>
 
+          {/* CONECTE-SE */}
           <div>
-            <div className="font-action text-xs tracking-[0.3em] uppercase text-primary mb-4">Conecte-se</div>
+            <div className="font-action text-xs tracking-[0.3em] uppercase text-primary mb-4">
+              Conecte-se
+            </div>
+
             <div className="flex gap-3 mb-6">
               <a
                 href="https://wa.me/33984185744"
@@ -52,6 +60,7 @@ export const Footer = () => {
               >
                 <MessageCircle size={18} />
               </a>
+
               <a
                 href="https://www.instagram.com/flavianaiphones"
                 target="_blank"
@@ -62,6 +71,7 @@ export const Footer = () => {
                 <Instagram size={18} />
               </a>
             </div>
+
             <Link
               to="/politica-de-privacidade"
               className="font-action text-sm text-muted-foreground hover:text-primary transition-colors"
@@ -71,9 +81,14 @@ export const Footer = () => {
           </div>
         </div>
 
+        {/* RODAPÉ FINAL */}
         <div className="pt-8 border-t border-border/30 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-muted-foreground">
-          <p>© {new Date().getFullYear()} Gold SmartPhones. Todos os direitos reservados.</p>
-          <p className="tracking-widest uppercase">Premium · Original · Garantido</p>
+          <p>
+            © {new Date().getFullYear()} Gold SmartPhones. Todos os direitos reservados.
+          </p>
+          <p className="tracking-widest uppercase">
+            Premium · Original · Garantido
+          </p>
         </div>
       </div>
     </footer>
